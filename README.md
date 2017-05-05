@@ -13,6 +13,11 @@ While you would access a table like this for instance: `foo['bar'][123]['name']`
 If the value you are trying to access is an array/object then it will return a table that only contains the keys/indexes of the direct children.  
 This is enough to start iteration over it.
 
+## Use cases
+I mainly developed this libary to be used by HTTP server libraries. The idea is that a json request body can be received in chunks and be written into a file.  
+This way  you never have to store the json request body in your memory, but jsut on the flash.  
+Then this library can read the string from the file one byte at a time and parse it this way.
+
 ## Examples
 ``` Lua
 local example =  json('example.json') -- Specify which file you want to read the JSON string from
